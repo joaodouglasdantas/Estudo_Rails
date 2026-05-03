@@ -15,8 +15,16 @@
         <td><%= customer.name %></td>
         <td><%= customer.phone %></td>
         <td>
-          <% customer.addresses.each do |address| %>
-            <p><%= address.street %>, <%= address.number %>, <%= address.city %></p>
+          <% if customer.addresses.any? %>
+            <% customer.addresses.each do |address| %>
+              <p>
+                <%= address.street.presence || "Não cadastrado" %>, 
+                <%= address.number.presence || "Não cadastrado" %>, 
+                <%= address.city.presence || "Não cadastrado" %>
+              </p>
+            <% end %>
+          <% else %>
+            Nada cadastrado
           <% end %>
         </td>
       </tr>
