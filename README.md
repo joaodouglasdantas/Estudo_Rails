@@ -4,7 +4,7 @@ Guia rápido com comandos e anotações úteis para desenvolvimento com Ruby on 
 
 ---
 
-## 🚀 Criando um Projeto com Tailwind
+## Criando um Projeto com Tailwind
 
 ```bash
 rails new nome_do_projeto --css=tailwind --javascript=importmap
@@ -20,7 +20,7 @@ http://localhost:3000
 
 ---
 
-## 🛠️ Geradores (Generators)
+## Geradores (Generators)
 
 ### Scaffold (estrutura completa)
 
@@ -48,7 +48,7 @@ rails g controller Home index
 
 ---
 
-## 🗄️ Banco de Dados
+## Banco de Dados
 
 Rodar migrations:
 
@@ -64,7 +64,7 @@ rails db:drop db:create db:migrate db:seed
 
 ---
 
-## 🔄 Migrations
+## Migrations
 
 Exemplo de rename:
 
@@ -74,7 +74,7 @@ rails g migration RenameStudentTeachersToStudentsTeachers
 
 ---
 
-## 🧪 Console Rails
+## Console Rails
 
 Abrir console:
 
@@ -90,7 +90,7 @@ exit
 
 ---
 
-## 🔗 Rotas
+## Rotas
 
 Ver rotas no navegador:
 
@@ -100,7 +100,7 @@ http://localhost:3000/rails/info/routes
 
 ---
 
-## 📦 Gems (Bundler)
+## Gems (Bundler)
 
 Instalar dependências:
 
@@ -122,7 +122,7 @@ bundle update
 
 ---
 
-## 🧾 ERB (Views)
+## ERB (Views)
 
 Executar código:
 
@@ -138,7 +138,7 @@ Código sem renderizar:
 
 ---
 
-## 🔗 Associações (HABTM)
+## Associações (HABTM)
 
 Exemplo de relação **Many-to-Many** entre `Student` e `Teacher`.
 
@@ -162,7 +162,7 @@ t.students = Student.all
 
 ---
 
-## 🧠 Boas Práticas
+## Boas Práticas
 
 * Use **migrations** para tabelas intermediárias simples (HABTM)
 * Use **models intermediários** (`has_many :through`) quando precisar:
@@ -172,7 +172,7 @@ t.students = Student.all
 
 ---
 
-## 💡 Dicas Rápidas
+## Dicas Rápidas
 
 * Sempre rode `rails db:migrate` após mudanças no banco
 * Prefira nomes claros para migrations
@@ -181,7 +181,7 @@ t.students = Student.all
 
 ---
 
-## 📌 Extras
+## Começo
 
 Criar novo projeto:
 
