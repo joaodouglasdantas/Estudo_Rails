@@ -41,3 +41,17 @@ f(dev):005> s.teacher_ids=1
   Student::HABTM_Teachers Create (0.2ms)  INSERT INTO "students_teachers" ("student_id", "teacher_id") VALUES (1, 1) RETURNING "id" /*application='F'*/                         
   TRANSACTION (2.9ms)  COMMIT TRANSACTION /*application='F'*/
 => 1
+
+f(dev):014> t.students                                                                                                                                                          
+=> [#<Student:0x000001b0d90da008 id: 1, name: "John Doe", created_at: "2026-05-02 23:45:45.039038000 +0000", updated_at: "2026-05-02 23:45:45.039038000 +0000">]                
+f(dev):015> t.students = Student.all                                                                                                                                            
+  Student Load (0.2ms)  SELECT "students".* FROM "students" /*application='F'*/                                                                                                 
+  TRANSACTION (0.1ms)  BEGIN immediate TRANSACTION /*application='F'*/                                                                                                          
+  Teacher::HABTM_Students Create (0.2ms)  INSERT INTO "students_teachers" ("student_id", "teacher_id") VALUES (2, 1) RETURNING "id" /*application='F'*/                         
+  TRANSACTION (23.2ms)  COMMIT TRANSACTION /*application='F'*/                                                                                                                  
+=>                                                                                                                                                                              
+[#<Student:0x000001b0d90dc588 id: 1, name: "John Doe", created_at: "2026-05-02 23:45:45.039038000 +0000", updated_at: "2026-05-02 23:45:45.039038000 +0000">,
+...
+f(dev):016>     
+
+use migration pra intermediar tabelas de forma simples e use models pra interdemdiar de forma mais complexa e com informacoes proprias
