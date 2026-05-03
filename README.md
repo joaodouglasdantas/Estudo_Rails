@@ -4,6 +4,15 @@ Guia rápido com comandos e anotações úteis para desenvolvimento com Ruby on 
 
 ---
 
+## Começo
+
+Criar novo projeto:
+
+```bash
+rails new nome_do_projeto
+
+---
+
 ## Criando um Projeto com Tailwind
 
 ```bash
@@ -178,15 +187,5 @@ t.students = Student.all
 * Prefira nomes claros para migrations
 * Evite `bundle update` geral sem necessidade
 * Use scaffold só para prototipagem rápida
-
----
-
-## Começo
-
-Criar novo projeto:
-
-```bash
-rails new nome_do_projeto
-```
 
 ---
