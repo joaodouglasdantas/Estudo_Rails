@@ -1,0 +1,19 @@
+<h1>Customers</h1>
+<%= link_to "Adicionar cliente", new_customer_path %>
+
+<% @customers.each do |customer| %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.phone %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
