@@ -4,6 +4,6 @@ class CustomersController < ApplicationController
   end
 
   def new
-    @customer
+    @customer = Customer.new
   end
 end
