@@ -172,6 +172,33 @@ t.students = Student.all
 
 ---
 
+## Associações Polimórficas (Polymorphic Associations)
+
+Associações polimórficas permitem que um model pertença a mais de um outro model em uma única associação. No exemplo abaixo, o model `Address` pertence tanto a `Employee` quanto a `Customer`.
+
+
+### 1. Estrutura do Model
+Para funcionar, a tabela deve conter as colunas `addressable_type` (String) e `addressable_id` (Integer).
+
+### 2. Exemplos Práticos (Console)
+
+**Criando endereços para modelos diferentes:**
+```ruby
+# Para um Funcionário (Employee)
+e = Employee.first
+e.addresses << Address.create(street: "Rua da paz")
+# SQL gerado: INSERT INTO "addresses" ("street", "addressable_type", "addressable_id"...) 
+# VALUES ('Rua da paz', 'Employee', 1...)
+
+# Para um Cliente (Customer)
+c = Customer.first
+c.addresses << Address.create(street: "Rua da lamentacao")
+# SQL gerado: INSERT INTO "addresses" ("street", "addressable_type", "addressable_id"...) 
+# VALUES ('Rua da lamentacao', 'Customer', 1...)
+```
+
+---
+
 ## Boas Práticas
 
 * Use **migrations** para tabelas intermediárias simples (HABTM)
