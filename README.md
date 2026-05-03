@@ -4,7 +4,7 @@ Guia rápido com comandos e anotações úteis para desenvolvimento com Ruby on 
 
 ---
 
-## 🚀 Criando um Projeto
+## 🚀 Criando um Projeto com Tailwind
 
 ```bash
 rails new nome_do_projeto --css=tailwind --javascript=importmap
