@@ -12,21 +12,32 @@
     </thead>
     <tbody>
       <tr>
-        <td><%= customer.name %></td>
-        <td><%= customer.phone %></td>
-        <td>
-          <% if customer.addresses.any? %>
+        <!-- Nome -->
+        <% if customer.name.present? %>
+          <td><%= customer.name %></td>
+        <% else %>
+          <td> Nada cadastrado </td>
+        <% end %>
+
+        <!-- Telefone -->
+        <% if customer.phone.present? %>
+          <td><%= customer.phone %></td>
+        <% else %>
+          <td> Nada cadastrado </td>
+        <% end %>
+
+        <!-- Endereço -->
+        <% if customer.addresses.any? %>
+          <td>
             <% customer.addresses.each do |address| %>
-              <p>
-                <%= address.street.presence || "Não cadastrado" %>, 
-                <%= address.number.presence || "Não cadastrado" %>, 
-                <%= address.city.presence || "Não cadastrado" %>
-              </p>
+              <%= address.street.presence || "Não cadastrado" %>,
+              <%= address.number.presence || "Não cadastrado" %>,
+              <%= address.city.presence || "Não cadastrado" %>
             <% end %>
-          <% else %>
-            Nada cadastrado
-          <% end %>
-        </td>
+          </td>
+        <% else %>
+          <td> Nada cadastrado </td>
+        <% end %>
       </tr>
     </tbody>
   </table>
