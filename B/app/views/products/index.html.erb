@@ -1,0 +1,11 @@
+<%= link_to "New Product", new_product_path %>
+
+<% @products.each do |product| %>
+  
+  <p><%= product.name %></p>
+  
+  <%= link_to "Show", "products/#{product.id}" %>
+  <%= link_to "Edit", "products/#{product.id}/edit" %>
+  <%= button_to "Delete", "products/#{product.id}", method: :delete, form:{ data: { turbo_confirm: "Are you sure?" } }%>
+
+<% end %>

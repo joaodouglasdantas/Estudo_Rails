@@ -1,0 +1,10 @@
+<h1>OIII</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% @posts.each do |post| %>
+    <% if post.description? %>
+        <h1> <%= link_to post.title, post %> </h1>
+    <% end %>
+<% end %>
+
+<%= link_to "Posts", posts_path %>
