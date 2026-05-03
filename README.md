@@ -10,6 +10,7 @@ Criar novo projeto:
 
 ```bash
 rails new nome_do_projeto
+```
 
 ---
 
